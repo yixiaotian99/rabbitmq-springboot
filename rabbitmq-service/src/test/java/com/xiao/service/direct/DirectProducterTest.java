@@ -1,5 +1,6 @@
 package com.xiao.service.direct;
 
+import cn.hutool.core.thread.ThreadUtil;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,11 @@ class DirectProducterTest {
     @Test
     void sendTest() {
 
-        directProducter.send("测试的消息!");
+        for (int i = 0; i < 10; i++) {
+            directProducter.send("测试的消息: " + i);
+        }
 
+
+        ThreadUtil.sleep(3000);
     }
 }

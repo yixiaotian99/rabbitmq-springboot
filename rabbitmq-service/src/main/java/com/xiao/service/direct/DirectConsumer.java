@@ -3,6 +3,7 @@ package com.xiao.service.direct;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 /**
@@ -10,9 +11,10 @@ import org.springframework.stereotype.Component;
  * @Date 2020-06-19 22:52
  * @Description 使用 Direct 消费者
  **/
+@Profile("direct")
 @Slf4j
 @Component
-@RabbitListener(queues = "test_queue_02")
+@RabbitListener(queues = DirectRabbitConfig.queueName)
 public class DirectConsumer {
 
 
@@ -24,6 +26,7 @@ public class DirectConsumer {
     public void process(String msg){
 
         log.info("receive:{}", msg);
+
 
     }
 
