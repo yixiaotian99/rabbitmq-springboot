@@ -9,11 +9,10 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-
     <groupId>com.xiao</groupId>
-    <artifactId>rabbitmq-service</artifactId>
+    <artifactId>rabbitmq-tx</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>rabbitmq-service</name>
+    <name>rabbitmq-tx</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -49,23 +48,22 @@
             </exclusions>
         </dependency>
 
+
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-amqp -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-amqp</artifactId>
-            <version>2.3.0.RELEASE</version>
         </dependency>
 
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
-            <version>5.3.7</version>
         </dependency>
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
         </dependency>
-
     </dependencies>
 
     <build>
