@@ -23,6 +23,7 @@
     <modules>
         <module>rabbitmq-service</module>
         <module>rabbitmq-tx</module>
+        <module>rabbitmq-ack</module>
     </modules>
 
     <properties>
