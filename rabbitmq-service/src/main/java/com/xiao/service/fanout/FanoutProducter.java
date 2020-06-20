@@ -1,25 +1,20 @@
-package com.xiao.service.direct;
+package com.xiao.service.fanout;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
 
 /**
  * @Author sunjinwei
- * @Date 2020-06-19 21:35
- * @Description 使用 rabbitmq 默认的 direct 模式投递消息
+ * @Date 2020-06-20 09:23
+ * @Description 发布订阅生产者
  **/
 @Slf4j
 @Component
-public class DirectProducter {
-
-
-    private final String queueName = DirectRabbitConfig.queueName;
-
+public class FanoutProducter {
 
     @Autowired
     private RabbitTemplate rabbitTemplate;
@@ -28,9 +23,9 @@ public class DirectProducter {
     public String send(String content) {
 
         String msg = content + ":" + new Date();
-        log.info("send msg: {}", msg);
+        log.info("fanout send msg: {}", msg);
 
-        rabbitTemplate.convertAndSend(queueName, msg);
+        rabbitTemplate.convertAndSend("fanoutExchange", "", msg);
 
         return msg;
     }

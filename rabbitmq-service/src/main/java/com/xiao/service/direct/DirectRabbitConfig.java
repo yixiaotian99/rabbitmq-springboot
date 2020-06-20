@@ -11,7 +11,6 @@ import org.springframework.context.annotation.Profile;
  * @Date 2020-06-19 21:40
  * @Description rabbitMQ 配置
  **/
-@Profile("direct")
 @Configuration
 public class DirectRabbitConfig {
 

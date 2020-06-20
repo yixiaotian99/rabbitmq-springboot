@@ -13,7 +13,6 @@ import org.springframework.context.annotation.Profile;
  * @Date 2020-06-19 23:04
  * @Description 使用 topic 模式 rabbitmq 配置
  **/
-@Profile("topic")
 @Configuration
 public class TopicRabbitConfig {
 

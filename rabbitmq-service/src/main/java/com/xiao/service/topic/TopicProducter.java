@@ -13,7 +13,6 @@ import java.util.Date;
  * @Date 2020-06-19 23:14
  * @Description TODO
  **/
-@Profile("topic")
 @Slf4j
 @Component
 public class TopicProducter {

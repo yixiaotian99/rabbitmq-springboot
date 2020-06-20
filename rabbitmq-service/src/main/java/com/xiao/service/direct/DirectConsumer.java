@@ -11,7 +11,6 @@ import org.springframework.stereotype.Component;
  * @Date 2020-06-19 22:52
  * @Description 使用 Direct 消费者
  **/
-@Profile("direct")
 @Slf4j
 @Component
 @RabbitListener(queues = DirectRabbitConfig.queueName)
